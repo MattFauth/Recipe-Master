@@ -74,3 +74,9 @@ class TipoSerializer(serializers.ModelSerializer):
         model = Tipo
         fields = ['id', 'nome']
         read_only_fields = ['slug']
+
+class AutorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Autor
+        fields = ['id', 'nome']
+        read_only_fields = ['cadastrado_em', 'atualizado_em']

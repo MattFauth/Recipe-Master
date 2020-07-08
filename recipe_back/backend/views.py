@@ -16,8 +16,9 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
+    ordering_fields = ['id', 'username', 'email']
+    search_fields = ['username', 'email']
+    permission_classes = [permissions.IsAdminUser]
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -25,7 +26,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAdminUser]
 
 class UsuarioLogadoDetailsViewSet(viewsets.ModelViewSet):
     serializer_class = UsuarioDetalhadoSerializer
@@ -71,4 +72,10 @@ class ReceitaViewSet(viewsets.ModelViewSet):
     filterset_fields = ['autor']
     search_fields = ['autor__perfil__nome', 'tipo__nome', 'tempo_preparo', 'porcoes']
     permission_classes = [permissions.IsAuthenticated]
+
+class AutorViewSet(viewsets.ModelViewSet):
+    serializer_class = AutorSerializer
+    queryset = Autor.objects.all().order_by('perfil__nome')
+    search_fields = ['perfil__nome']
+
 
