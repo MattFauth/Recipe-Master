@@ -1,0 +1,18 @@
+.card{
+    margin-top: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
+    color: black;
+    flex: auto;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 black;
+    border-color: black;
+}
+
+.campo, .valor{
+    color: rgb(0, 89, 255);
+}
+
+h1, h5, h6{
+    color: orangered;
+}

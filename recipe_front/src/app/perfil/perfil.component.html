@@ -9,20 +9,20 @@
                 <h6 class="card-subtitle mb-3">Suas informações de usuário:</h6>
                 <div class="row mb-3">
                     <div class="col">
-                        <div class="campo">id (chave)</div>
+                        <div class="campo">ID (chave)</div>
                         <div class="valor">{{user.id}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">username</div>
+                        <div class="campo">Username:</div>
                         <div class="valor">{{user.username}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">e-mail</div>
+                        <div class="campo">E-mail:</div>
                         <div class="valor">{{user.email}}</div>
                     </div>
                 </div>
                 <div>
-                    <div class="campo">data e hora de expiração do token</div>
+                    <div class="campo">Data e hora de expiração do token:</div>
                     <div class="valor">
                         {{user.token_expires|date:'short'}}
                     </div>
@@ -43,60 +43,60 @@
                 <h6 class="card-subtitle mt-4">Informações do registro</h6>
                 <div class="row">
                     <div class="col">
-                        <div class="campo">id (chave)</div>
+                        <div class="campo">ID (chave):</div>
                         <div class="valor">{{perfil.id}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">data de cadastro</div>
+                        <div class="campo">Data de cadastro:</div>
                         <div class="valor">{{perfil.cadastrado_em | date:'short'}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">data de atualização</div>
+                        <div class="campo">Data de atualização:</div>
                         <div class="valor">{{perfil.atualizado_em | date:'short'}}</div>
                     </div>
                 </div>
-
+                <hr>
                 <h6 class="card-subtitle mt-4">Informações pessoais e documentação</h6>
                 <div class="row mb-2">
                     <div class="col">
-                        <div class="campo">nome</div>
+                        <div class="campo">Nome:</div>
                         <div class="valor">{{perfil.nome}}</div>
                     </div>
                     <div class="col-2">
-                        <div class="campo">sexo</div>
+                        <div class="campo">Sexo:</div>
                         <div class="valor">{{perfil.sexo}}</div>
                     </div>
                 </div>
                 <div>
-                    <div class="campo">CPF</div>
+                    <div class="campo">CPF:</div>
                     <div class="valor">{{perfil.cpf}}</div>
                 </div>
-
+                <hr>
                 <h6 class="card-subtitle mt-4">Informações de contato</h6>
                 <div class="row">
                     <div class="col">
-                        <div class="campo">e-mail (do usuário)</div>
+                        <div class="campo">E-mail (do usuário):</div>
                         <div class="valor">{{user.email}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">telefone</div>
+                        <div class="campo">Telefone:</div>
                         <div class="valor">{{perfil.telefone}}</div>
                     </div>
                 </div>
-
+                <hr>
                 <h6 class="card-subtitle mt-4">Informações de correspondência</h6>
                 <div class="row mb-2">
                     <div class="col">
-                        <div class="campo">endereço</div>
+                        <div class="campo">Endereço:</div>
                         <div class="valor">{{perfil.endereco}}</div>
                     </div>
                     <div class="col">
-                        <div class="campo">cidade / UF</div>
+                        <div class="campo">Cidade / UF:</div>
                         <div class="valor">{{perfil.cidade}} / {{perfil.estado_uf}}</div>
                     </div>
                 </div>
                 <div>
-                    <div class="campo">CEP</div>
+                    <div class="campo">CEP:</div>
                     <div class="valor">{{perfil.cep}}</div>
                 </div>
 

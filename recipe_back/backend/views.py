@@ -39,7 +39,11 @@ class UsuarioLogadoDetailsViewSet(viewsets.ModelViewSet):
         usuario = self.get_queryset()
         return Response(self.get_serializer(usuario).data)
 
+
 class PerfilLogadoViewSet(viewsets.ModelViewSet):
+    """
+    Endpoint que permite obter e cadastrar um perfil para o usuário logado
+    """
     serializer_class = PerfilSerializer
 
     def get_queryset(self):
@@ -52,6 +56,18 @@ class PerfilLogadoViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
         else:
             return Response(None, status=404)
+
+
+class PerfilViewSet(viewsets.ModelViewSet):
+    """
+    Endpoint que permite recuperar e editar informações sobre perfis de usuários
+    """
+    serializer_class = PerfilSerializer
+    queryset = Perfil.objects.all()
+    filterset_fields = ['usuario', 'estado_uf', 'cidade']
+    search_fields = ['usuario__username', 'usuario__email', 'nome', 'cpf', 'telefone', 'endereco', 'estado_uf',
+                     'cidade', 'cep']
+    permission_classes = [permissions.IsAdminUser]
 
 class PerfilViewSet(viewsets.ModelViewSet):
     serializer_class = PerfilSerializer

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         concatMap(() => this.auth$.getDetalhesDoUsuarioLogado())
       ).subscribe(
         () => this.router.navigate(['/perfil']),
-        err => this.error = err.error
+        err => this.error = err.error 
       );
   }
 
