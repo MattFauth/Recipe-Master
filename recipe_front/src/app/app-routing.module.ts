@@ -3,13 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
-
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: PaginaNaoEncontradaComponent}
+  { path: '**', component: PaginaNaoEncontradaComponent},
+  { path: 'index', component:  IndexComponent},
 ];
 
 @NgModule({

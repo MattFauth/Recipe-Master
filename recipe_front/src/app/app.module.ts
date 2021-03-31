@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { IndexComponent } from './index/index.component';
 
 registerLocaleData(localePt, 'pt', localePtExtra);
 @NgModule({
@@ -19,6 +20,7 @@ registerLocaleData(localePt, 'pt', localePtExtra);
     LoginComponent,
     PerfilComponent,
     PaginaNaoEncontradaComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

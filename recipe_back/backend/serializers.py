@@ -89,3 +89,21 @@ class AutorSerializer(serializers.ModelSerializer):
         model = Autor
         fields = ['id', 'nome']
         read_only_fields = ['cadastrado_em', 'atualizado_em']
+
+class IndexSerializer(serializers.ModelSerializer):
+    class TipoSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Tipo
+            fields = ['id', 'nome', 'slug']
+
+    class ReceitaSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Receita
+            fields = ['nome', 'tipo', 'imagem', 'descricao', 'tempo_preparo', 'porcoes', 'ingredientes', 'autor', 'slug']
+            read_only_fields = ['cadastrado_em', 'atualizado_em', 'id']
+
+    class AutorSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Autor
+            fields = ['id', 'nome']
+            read_only_fields = ['cadastrado_em', 'atualizado_em']

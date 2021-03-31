@@ -12,6 +12,7 @@ router.register('usuario-logado', views.UsuarioLogadoDetailsViewSet, basename='u
 router.register('perfis', views.PerfilViewSet, basename='perfis')
 router.register('receitas', views.ReceitaViewSet)
 router.register('autores', views.AutorViewSet)
+router.register('index', views.IndexViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -2,7 +2,7 @@
     margin-top: 25px;
     margin-left: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: antiquewhite;
+    background-color: #faebd7;
     color: black;
     flex: auto;
     text-align: left;
@@ -11,9 +11,9 @@
 }
 
 h1{
-    color: rgb(0, 89, 255);
+    color: #FFA530;
 }
 
 p{
-    color: orangered;
+    color: #16A6F5;
 }

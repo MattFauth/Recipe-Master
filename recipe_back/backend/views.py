@@ -6,6 +6,7 @@ from rest_framework import viewsets, filters
 from rest_framework import permissions
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.response import Response
+import random
 
 from .serializers import *
 from .models import *
@@ -94,4 +95,6 @@ class AutorViewSet(viewsets.ModelViewSet):
     queryset = Autor.objects.all().order_by('perfil__nome')
     search_fields = ['perfil__nome']
 
-
+class IndexViewSet(viewsets.ModelViewSet):
+    serializer_class = IndexSerializer
+    queryset = Receita.objects.all().order_by('cadastrado_em')

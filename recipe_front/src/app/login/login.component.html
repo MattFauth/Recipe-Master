@@ -14,9 +14,9 @@
         </div>
         <div class="col-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="background-color: #006CA8">
                     <h3 class="card-title">Entrar no sistema</h3>
-                    <h6 class="card-subtitle mb-3 text-muted">Informe suas credenciais (nome de usuário e senha) para
+                    <h6 class="card-subtitle mb-3" style="color: #4ABAF7;">Informe suas credenciais (nome de usuário e senha) para
                         acessar o
                         sistema</h6>
                     <div class="alert alert-danger" *ngIf="error">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary" [disabled]="formLogin.invalid">
+                            <button class="btn btn btn-warning" [disabled]="formLogin.invalid">
                                 <i class="fas fa-key" aria-hidden="true"></i>
                                 Entrar
                             </button>
