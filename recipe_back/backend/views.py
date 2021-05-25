@@ -19,7 +19,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     ordering_fields = ['id', 'username', 'email']
     search_fields = ['username', 'email']
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -27,7 +27,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
 class UsuarioLogadoDetailsViewSet(viewsets.ModelViewSet):
     serializer_class = UsuarioDetalhadoSerializer
@@ -55,8 +55,8 @@ class PerfilLogadoViewSet(viewsets.ModelViewSet):
         if perfil.exists():
             serializer = self.get_serializer(perfil.first())
             return Response(serializer.data)
-        else:
-            return Response(None, status=404)
+
+        return Response(None, status=404)
 
 
 class PerfilViewSet(viewsets.ModelViewSet):
@@ -65,17 +65,30 @@ class PerfilViewSet(viewsets.ModelViewSet):
     """
     serializer_class = PerfilSerializer
     queryset = Perfil.objects.all()
-    filterset_fields = ['usuario', 'estado_uf', 'cidade']
-    search_fields = ['usuario__username', 'usuario__email', 'nome', 'cpf', 'telefone', 'endereco', 'estado_uf',
-                     'cidade', 'cep']
-    permission_classes = [permissions.IsAdminUser]
+    filterset_fields = [
+        'usuario',
+        'estado_uf',
+        'cidade',
+    ]
+    search_fields = [
+        'usuario__username',
+        'usuario__email',
+        'nome',
+        'cpf',
+        'telefone',
+        'endereco',
+        'estado_uf',
+        'cidade',
+        'cep',
+    ]
+    permission_classes = [permissions.IsAuthenticated]
 
 class PerfilViewSet(viewsets.ModelViewSet):
     serializer_class = PerfilSerializer
     queryset = Perfil.objects.all()
     filterset_fields = ['usuario', 'estado_uf', 'cidade']
     search_fields = ['usuario__username', 'usuario__email', 'nome', 'cpf', 'telefone', 'endereco', 'estado_uf','cidade', 'cep']
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
 class TipoViewSet(viewsets.ModelViewSet):
     serializer_class = TipoSerializer
@@ -94,7 +107,3 @@ class AutorViewSet(viewsets.ModelViewSet):
     serializer_class = AutorSerializer
     queryset = Autor.objects.all().order_by('perfil__nome')
     search_fields = ['perfil__nome']
-
-class IndexViewSet(viewsets.ModelViewSet):
-    serializer_class = IndexSerializer
-    queryset = Receita.objects.all().order_by('cadastrado_em')

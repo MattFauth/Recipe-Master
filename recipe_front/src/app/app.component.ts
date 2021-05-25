@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as LogRocket from 'logrocket';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    LogRocket.init('kqugtk/logrocket-test');
+  }
 
 }

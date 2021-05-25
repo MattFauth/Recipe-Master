@@ -8,9 +8,9 @@ import { IndexComponent } from './index/index.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: '**', component: PaginaNaoEncontradaComponent},
-  { path: 'index', component:  IndexComponent},
+  { path: 'index', component:  IndexComponent },
 ];
 
 @NgModule({

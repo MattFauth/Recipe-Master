@@ -101,9 +101,3 @@ class IndexSerializer(serializers.ModelSerializer):
             model = Receita
             fields = ['nome', 'tipo', 'imagem', 'descricao', 'tempo_preparo', 'porcoes', 'ingredientes', 'autor', 'slug']
             read_only_fields = ['cadastrado_em', 'atualizado_em', 'id']
-
-    class AutorSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Autor
-            fields = ['id', 'nome']
-            read_only_fields = ['cadastrado_em', 'atualizado_em']
